@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Sparsh Jaiswal (Eren) — Web Developer · AI Enthusiast · Vibe Coder</title>
+  <meta name="description" content="Mission dossier of Sparsh Jaiswal — B.Tech CSE student at Invertis University, freelance web developer building for real businesses across Tier-2 India." />
+  <meta property="og:title" content="Sparsh Jaiswal — Dedicate Your Craft" />
+  <meta property="og:description" content="Web Developer · AI Enthusiast · Vibe Coder." />
+  <meta property="og:type" content="website" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Sparsh Jaiswal — Web Developer & Vibe Coder" />
+  <meta name="twitter:description" content="Portfolio of Sparsh Jaiswal (Eren) — B.Tech CSE student, freelance web developer and AI enthusiast building for real businesses." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;700;900&family=Black+Ops+One&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --font-display: "Cinzel", serif;
+      --font-stencil: "Black Ops One", "Cinzel", serif;
+      --font-body: "Inter", system-ui, sans-serif;
+      --color-background: #0d0f0c;
+      --color-foreground: #e8dfc8;
+      --color-parchment: #e8dfc8;
+      --color-ash: #a39e8e;
+      --color-muted: #6b6658;
+      --color-border: #3d3a32;
+      --color-accent: #8c1c13;
+      --color-blood: #8c1c13;
+      --color-leather: #4a3826;
+      --color-primary: #3d4127;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background-color: var(--color-background);
+      color: var(--color-foreground);
+      font-family: var(--font-body);
+      background-image:
+        radial-gradient(ellipse at top, rgba(34, 36, 28, 0.6), transparent 60%),
+        radial-gradient(ellipse at bottom, rgba(26, 22, 16, 0.5), transparent 70%);
+      background-attachment: fixed;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+    h1, h2, h3, h4 { font-family: var(--font-display); letter-spacing: 0.04em; }
+    a { color: inherit; text-decoration: none; }
+
+    /* === Utility Classes === */
+    .text-parchment { color: var(--color-parchment); }
+    .text-ash { color: var(--color-ash); }
+    .text-muted { color: var(--color-muted); }
+    .bg-dark { background: #0d0f0c; }
+    .bg-darker { background: #121410; }
+    .border-subtle { border-color: var(--color-border); }
+
+    .grain { position: relative; }
+    .grain::after {
+      content: "";
+      position: absolute; inset: 0;
+      pointer-events: none;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/><feColorMatrix values='0 0 0 0 0  0 0 0 0 0  0 0 0 0 0  0 0 0 0.35 0'/></filter><rect width='100%25' height='100%25' filter='url(%23n)'/></svg>");
+      opacity: 0.18; mix-blend-mode: overlay;
+    }
+
+    .stamp {
+      display: inline-block;
+      font-family: var(--font-stencil);
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      padding: 0.35rem 0.9rem;
+      border: 2px solid var(--color-blood);
+      color: var(--color-blood);
+      transform: rotate(-3deg);
+      background: rgba(232, 223, 200, 0.04);
+      box-shadow: inset 0 0 0 1px rgba(140, 28, 19, 0.3);
+      text-shadow: 1px 0 0 rgba(140, 28, 19, 0.3);
+    }
+
+    .wax-button {
+      position: relative;
+      display: inline-flex; align-items: center; gap: 0.6rem;
+      font-family: var(--font-stencil);
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-parchment);
+      background: linear-gradient(180deg, #a0241a, #6e1510);
+      padding: 1rem 2rem;
+      border: 1px solid #b83024;
+      box-shadow:
+        inset 0 1px 0 rgba(184, 48, 36, 0.5),
+        inset 0 -2px 6px rgba(45, 10, 8, 0.6),
+        0 8px 24px -8px rgba(140, 28, 19, 0.6);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      cursor: pointer;
+    }
+    .wax-button:hover {
+      animation: heartbeat 1.4s ease-in-out infinite;
+      box-shadow:
+        inset 0 1px 0 rgba(200, 60, 48, 0.6),
+        inset 0 -2px 6px rgba(45, 10, 8, 0.6),
+        0 12px 36px -8px rgba(140, 28, 19, 0.8);
+    }
+
+    .torn-card {
+      background: #e8dfc8;
+      color: #2a2820;
+      position: relative;
+      padding: 2rem;
+      clip-path: polygon(
+        0% 4%, 3% 0%, 12% 3%, 22% 0%, 35% 4%, 48% 1%, 62% 3%, 75% 0%, 88% 4%, 97% 1%, 100% 5%,
+        100% 96%, 96% 100%, 85% 97%, 72% 100%, 58% 96%, 44% 100%, 30% 97%, 18% 100%, 6% 96%, 0% 99%
+      );
+      box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.8);
+      transition: transform 0.3s ease;
+    }
+    .torn-card:hover { transform: translateY(-4px); }
+
+    .insignia {
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      width: 7.5rem; height: 7.5rem;
+      background: radial-gradient(circle, #3d3a32, #222018);
+      border: 2px solid rgba(140, 133, 115, 0.6);
+      color: var(--color-parchment);
+      font-family: var(--font-stencil);
+      letter-spacing: 0.15em;
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      transition: transform 0.3s ease, border-color 0.3s ease;
+      font-size: 0.7rem;
+    }
+    .insignia:hover { transform: translateY(-4px) scale(1.04); border-color: var(--color-blood); }
+    .insignia .diamond { color: var(--color-blood); font-size: 1.8rem; margin-bottom: 0.3rem; }
+
+    /* === Animations === */
+    @keyframes heartbeat {
+      0%, 100% { transform: scale(1); }
+      25% { transform: scale(1.03); }
+      40% { transform: scale(1); }
+      60% { transform: scale(1.015); }
+    }
+    @keyframes drift {
+      0% { transform: translate3d(0,0,0); opacity: 0; }
+      10% { opacity: 0.6; }
+      100% { transform: translate3d(40px, -120vh, 0); opacity: 0; }
+    }
+    @keyframes crack-in {
+      0% { opacity: 0; transform: translateY(40px); clip-path: inset(0 100% 0 0); }
+      100% { opacity: 1; transform: translateY(0); clip-path: inset(0 0 0 0); }
+    }
+
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s ease, transform 0.9s ease; }
+    .reveal.in { opacity: 1; transform: translateY(0); animation: crack-in 0.9s ease forwards; }
+
+    .ash {
+      position: absolute;
+      width: 2px; height: 2px;
+      background: rgba(200, 192, 172, 0.6);
+      border-radius: 9999px;
+      bottom: -10px;
+      animation: drift linear infinite;
+      pointer-events: none;
+    }
+
+    /* === Layout === */
+    .container { width: 100%; max-width: 72rem; margin: 0 auto; padding: 0 1.5rem; }
+    @media (min-width: 768px) { .container { padding: 0 2rem; } }
+
+    /* Header */
+    .site-header {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(13, 15, 12, 0.65);
+      border-bottom: 1px solid rgba(140, 28, 19, 0.2);
+    }
+    .site-header .container { display: flex; align-items: center; justify-content: space-between; padding-top: 1rem; padding-bottom: 1rem; }
+    .logo { display: flex; align-items: center; gap: 0.75rem; }
+    .logo-hex {
+      width: 2rem; height: 2rem;
+      border: 2px solid var(--color-blood);
+      clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
+      background: var(--color-leather);
+    }
+    .logo-text { font-family: var(--font-stencil); font-size: 0.875rem; letter-spacing: 0.3em; }
+    .site-nav { display: none; gap: 2rem; font-size: 0.75rem; font-weight: 500; text-transform: uppercase; letter-spacing: 0.25em; font-family: var(--font-stencil); }
+    .site-nav a { transition: color 0.2s; }
+    .site-nav a:hover { color: var(--color-accent); }
+    @media (min-width: 768px) { .site-nav { display: flex; } }
+
+    /* Hero */
+    .hero {
+      position: relative;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0;
+      background-image:
+        linear-gradient(180deg, rgba(13,15,12,0.5) 0%, rgba(10,11,8,0.85) 60%, rgba(8,9,6,1) 100%),
+        url('https://images.unsplash.com/photo-1518709268805-4e9042af9f23?w=1920&q=80');
+      background-size: cover;
+      background-position: center;
+    }
+    .hero-content { position: relative; z-index: 10; padding-top: 8rem; }
+    .hero-kicker { display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; }
+    .hero-kicker .line { height: 1px; width: 3rem; background: var(--color-accent); }
+    .hero-title {
+      font-size: 3.2rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      line-height: 0.95;
+      color: var(--color-parchment);
+      text-shadow: 0 4px 20px rgba(0,0,0,0.8), 2px 2px 0 rgba(140,28,19,0.15);
+      max-width: 900px;
+    }
+    .hero-title .blood { color: var(--color-blood); }
+    .hero-subtitle {
+      margin-top: 2rem;
+      font-size: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-ash);
+      font-family: var(--font-stencil);
+      max-width: 600px;
+    }
+    .hero-desc {
+      margin-top: 1.5rem;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--color-muted);
+      max-width: 600px;
+    }
+    .hero-actions { margin-top: 3rem; display: flex; flex-wrap: wrap; gap: 1rem; }
+    .hero-ghost-btn {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid var(--color-border);
+      padding: 1rem 1.75rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.22em;
+      font-family: var(--font-stencil);
+      transition: border-color 0.2s, color 0.2s;
+    }
+    .hero-ghost-btn:hover { border-color: var(--color-accent); color: var(--color-accent); }
+    .hero-meta {
+      margin-top: 6rem;
+      display: flex; align-items: center; gap: 1.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--color-muted);
+      font-family: var(--font-stencil);
+      flex-wrap: wrap;
+    }
+    .hero-meta .sep { height: 1px; width: 2rem; background: var(--color-border); }
+    @media (min-width: 768px) {
+      .hero-title { font-size: 6.5rem; }
+      .hero-subtitle { font-size: 1.125rem; }
+      .hero-desc { font-size: 1rem; }
+    }
+
+    /* Torn Divider */
+    .torn-divider { position: relative; height: 3rem; width: 100%; }
+    .torn-divider svg { position: absolute; inset: 0; height: 100%; width: 100%; }
+
+    /* Section */
+    .section { padding: 8rem 0; position: relative; }
+    .section-heading { margin-bottom: 3rem; display: flex; flex-direction: column; align-items: flex-start; gap: 0.75rem; }
+    .section-heading h2 {
+      font-size: 2.25rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      color: var(--color-parchment);
+    }
+    .section-heading .accent-line { height: 2px; width: 6rem; background: var(--color-accent); }
+    @media (min-width: 768px) { .section-heading h2 { font-size: 3.75rem; } }
+
+    /* About */
+    .about-grid { display: grid; gap: 4rem; }
+    .about-text { font-size: 1rem; line-height: 1.7; color: var(--color-ash); }
+    .about-text p { margin-bottom: 1.5rem; }
+    .about-text .highlight { color: var(--color-parchment); }
+    .about-quote {
+      border-left: 2px solid var(--color-accent);
+      padding-left: 1rem;
+      font-style: italic;
+      color: var(--color-parchment);
+    }
+    @media (min-width: 768px) { .about-grid { grid-template-columns: 1fr 1.4fr; } .about-text { font-size: 1.125rem; } }
+
+    /* Skills */
+    .skills-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1.5rem; margin-top: 2rem; }
+    .skills-note {
+      margin-top: 3rem;
+      max-width: 42rem;
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: var(--color-muted);
+    }
+    @media (min-width: 768px) { .skills-grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 1024px) { .skills-grid { grid-template-columns: repeat(6, 1fr); } }
+
+    /* Projects */
+    .projects-grid { display: grid; gap: 2.5rem; margin-top: 2rem; }
+    .project-card .status {
+      position: absolute; top: -0.75rem; right: 1rem;
+      font-size: 0.6rem;
+    }
+    .project-card .meta {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      margin-bottom: 0.75rem;
+      color: #5c5648;
+      font-family: var(--font-stencil);
+    }
+    .project-card h3 {
+      font-size: 1.5rem;
+      font-weight: 900;
+      text-transform: uppercase;
+      margin-bottom: 0.75rem;
+      color: #2a2820;
+    }
+    .project-card .divider { height: 2px; width: 3rem; background: var(--color-accent); margin-bottom: 1rem; }
+    .project-card p {
+      font-size: 0.875rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      color: #3d3a32;
+    }
+    .project-card .link {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: #2a2820;
+      font-family: var(--font-stencil);
+      transition: color 0.2s;
+    }
+    .project-card .link:hover { color: var(--color-accent); }
+    @media (min-width: 768px) { .projects-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (min-width: 1024px) { .projects-grid { grid-template-columns: repeat(3, 1fr); } }
+
+    /* Stats */
+    .stats-grid { display: grid; gap: 1.5rem; margin-top: 2rem; }
+    .stat-card {
+      position: relative;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      background: #1a1c16;
+    }
+    .stat-card .label {
+      font-size: 0.65rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-muted);
+      margin-bottom: 0.5rem;
+      font-family: var(--font-stencil);
+    }
+    .stat-card .value {
+      font-size: 2.25rem;
+      font-weight: 900;
+      color: var(--color-parchment);
+      font-family: var(--font-display);
+    }
+    .stat-card .bar-bg { margin-top: 1rem; height: 4px; width: 100%; background: #3d3a32; }
+    .stat-card .bar-fill { height: 100%; background: var(--color-accent); }
+    @media (min-width: 768px) { .stats-grid { grid-template-columns: repeat(4, 1fr); } }
+
+    /* Contact */
+    .contact-center { text-align: center; }
+    .contact-grid { display: grid; gap: 1rem; margin-top: 3rem; }
+    .contact-channel {
+      display: flex; align-items: center; justify-content: space-between;
+      border: 1px solid var(--color-border);
+      padding: 1.5rem;
+      background: #1a1c16;
+      text-align: left;
+      transition: border-color 0.2s;
+    }
+    .contact-channel:hover { border-color: var(--color-accent); }
+    .contact-channel .freq {
+      font-size: 0.6rem;
+      text-transform: uppercase;
+      letter-spacing: 0.3em;
+      color: var(--color-muted);
+      font-family: var(--font-stencil);
+    }
+    .contact-channel .addr {
+      margin-top: 0.25rem;
+      font-family: monospace;
+      font-size: 0.875rem;
+      color: var(--color-parchment);
+    }
+    .contact-channel .arrow {
+      font-size: 1.5rem;
+      color: var(--color-accent);
+      transition: transform 0.2s;
+    }
+    .contact-channel:hover .arrow { transform: translateX(4px); }
+    @media (min-width: 768px) { .contact-grid { grid-template-columns: repeat(2, 1fr); } }
+
+    .contact-closing {
+      margin-top: 4rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.35em;
+      color: var(--color-blood);
+      font-family: var(--font-stencil);
+    }
+
+    /* Footer */
+    .site-footer {
+      border-top: 1px solid var(--color-border);
+      padding: 2.5rem 0;
+    }
+    .site-footer .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.25em;
+      color: var(--color-muted);
+      font-family: var(--font-stencil);
+    }
+    @media (min-width: 768px) { .site-footer .container { flex-direction: row; } }
+  </style>
+</head>
+<body>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <div class="logo">
+        <div class="logo-hex"></div>
+        <span class="logo-text">SJ · EREN</span>
+      </div>
+      <nav class="site-nav">
+        <a href="#about">Wall Maria</a>
+        <a href="#skills">Wall Rose</a>
+        <a href="#projects">Wall Sina</a>
+        <a href="#contact">Outside</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero grain">
+    <div class="hero-bg"></div>
+    <div id="ash-container" class="grain" style="position: absolute; inset: 0; pointer-events: none; overflow: hidden;"></div>
+    <div class="hero-content container">
+      <div class="hero-kicker">
+        <div class="line"></div>
+        <span class="stamp" style="font-size: 0.65rem;">EXPEDITION No. 057</span>
+      </div>
+      <h1 class="hero-title">
+        Dedicate<br>Your <span class="blood">Craft</span>.
+      </h1>
+      <p class="hero-subtitle">Web Developer · AI Enthusiast · Vibe Coder</p>
+      <p class="hero-desc">
+        Sparsh Jaiswal — known to the squad as Eren. Building beyond the walls of templates, one expedition at a time.
+      </p>
+      <div class="hero-actions">
+        <a href="#projects" class="wax-button">▣ Begin Expedition</a>
+        <a href="#contact" class="hero-ghost-btn">Send Transmission</a>
+      </div>
+      <div class="hero-meta">
+        <span>⌖ Bareilly · IN</span>
+        <div class="sep"></div>
+        <span>EST. 2023</span>
+        <div class="sep"></div>
+        <span>Status: Active</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- Torn Divider -->
+  <div class="torn-divider" aria-hidden>
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24 L1440,48 L0,48 Z" fill="#121410" />
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24" stroke="rgba(140,28,19,0.6)" stroke-width="1.2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- About -->
+  <section id="about" class="section">
+    <div class="container about-grid">
+      <div class="reveal">
+        <div class="section-heading">
+          <span class="stamp" style="font-size: 0.7rem;">Wall Maria · Origin</span>
+          <h2>First Line of Defense</h2>
+          <div class="accent-line"></div>
+        </div>
+      </div>
+      <div class="reveal about-text">
+        <p>
+          A B.Tech CSE student at <span class="highlight">Invertis University</span>, building things that actually ship.
+          The wall fell early — staring at template-shaped websites and AI tools written for somebody else's reality.
+        </p>
+        <p>
+          Now I build for real businesses in <span class="highlight">Tier-2 India</span> — restaurants, lounges, civic-tech proposals — and explore where AI can finally serve the markets it usually skips.
+        </p>
+        <p class="about-quote">
+          "If you win, you live. If you lose, you die. If you don't fight, you can't win." — the only deployment strategy that's ever made sense.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Torn Divider -->
+  <div class="torn-divider" aria-hidden>
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24 L1440,48 L0,48 Z" fill="#121410" />
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24" stroke="rgba(140,28,19,0.6)" stroke-width="1.2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Skills -->
+  <section id="skills" class="section" style="background: #121410;">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-heading">
+          <span class="stamp" style="font-size: 0.7rem;">Wall Rose · Arsenal</span>
+          <h2>Squad Insignia</h2>
+          <div class="accent-line"></div>
+        </div>
+      </div>
+      <div class="reveal skills-grid">
+        <div class="insignia"><span class="diamond">◈</span><span>HTML</span></div>
+        <div class="insignia"><span class="diamond">◈</span><span>CSS</span></div>
+        <div class="insignia"><span class="diamond">◈</span><span>JAVASCRIPT</span></div>
+        <div class="insignia"><span class="diamond">◈</span><span>PYTHON</span></div>
+        <div class="insignia"><span class="diamond">◈</span><span>NETLIFY</span></div>
+        <div class="insignia"><span class="diamond">◈</span><span>AI</span></div>
+      </div>
+      <p class="reveal skills-note">
+        Stack chosen for combat readiness — ship fast, stay maintainable, run anywhere from Netlify edges to a client's borrowed laptop.
+      </p>
+    </div>
+  </section>
+
+  <!-- Torn Divider -->
+  <div class="torn-divider" aria-hidden>
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24 L1440,48 L0,48 Z" fill="#121410" />
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24" stroke="rgba(140,28,19,0.6)" stroke-width="1.2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Projects -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-heading">
+          <span class="stamp" style="font-size: 0.7rem;">Wall Sina · Mission Reports</span>
+          <h2>Field Operations</h2>
+          <div class="accent-line"></div>
+        </div>
+      </div>
+      <div class="projects-grid">
+        <article class="reveal torn-card project-card" style="transition-delay: 0ms;">
+          <div class="stamp status">DEPLOYED</div>
+          <div class="meta">Report № 001 · Hospitality · Bareilly</div>
+          <h3>Goonj 2.0</h3>
+          <div class="divider"></div>
+          <p>Lounge bar website for a Bareilly venue — atmospheric, booking-ready.</p>
+          <a href="#" class="link">✉ Open Sealed Envelope →</a>
+        </article>
+        <article class="reveal torn-card project-card" style="transition-delay: 100ms;">
+          <div class="stamp status">DEPLOYED</div>
+          <div class="meta">Report № 002 · Restaurant · Brand</div>
+          <h3>The Posh Table</h3>
+          <div class="divider"></div>
+          <p>Vegetarian restaurant site with a refined visual identity and menu.</p>
+          <a href="#" class="link">✉ Open Sealed Envelope →</a>
+        </article>
+        <article class="reveal torn-card project-card" style="transition-delay: 200ms;">
+          <div class="stamp status">ACTIVE</div>
+          <div class="meta">Report № 003 · Civic Tech · Policy</div>
+          <h3>GharRation</h3>
+          <div class="divider"></div>
+          <p>Civic-tech proposal for smart ration delivery, submitted to NITI Aayog.</p>
+          <a href="#" class="link">✉ Open Sealed Envelope →</a>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Torn Divider -->
+  <div class="torn-divider" aria-hidden>
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24 L1440,48 L0,48 Z" fill="#121410" />
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24" stroke="rgba(140,28,19,0.6)" stroke-width="1.2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Stats -->
+  <section class="section" style="background: #121410;">
+    <div class="container">
+      <div class="reveal">
+        <div class="section-heading">
+          <span class="stamp" style="font-size: 0.7rem;">Intel · Field Report</span>
+          <h2>Commits From The Front</h2>
+          <div class="accent-line"></div>
+        </div>
+      </div>
+      <div class="stats-grid">
+        <div class="reveal stat-card grain">
+          <div class="label">Commits</div>
+          <div class="value">1,240+</div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 78%;"></div></div>
+        </div>
+        <div class="reveal stat-card grain">
+          <div class="label">Repositories</div>
+          <div class="value">32</div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 65%;"></div></div>
+        </div>
+        <div class="reveal stat-card grain">
+          <div class="label">Live Sites</div>
+          <div class="value">8</div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 45%;"></div></div>
+        </div>
+        <div class="reveal stat-card grain">
+          <div class="label">Languages</div>
+          <div class="value">6</div>
+          <div class="bar-bg"><div class="bar-fill" style="width: 55%;"></div></div>
+        </div>
+      </div>
+      <p class="reveal" style="margin-top: 2.5rem; max-width: 42rem; font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.25em; color: var(--color-muted); font-family: var(--font-stencil);">
+        ⌗ Last transmission received — 0600 hours · Status nominal
+      </p>
+    </div>
+  </section>
+
+  <!-- Torn Divider -->
+  <div class="torn-divider" aria-hidden>
+    <svg viewBox="0 0 1440 48" preserveAspectRatio="none">
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24 L1440,48 L0,48 Z" fill="#121410" />
+      <path d="M0,20 L60,12 L120,28 L200,8 L280,30 L360,14 L450,32 L540,10 L640,28 L740,12 L840,34 L950,14 L1060,30 L1170,10 L1280,28 L1370,16 L1440,24" stroke="rgba(140,28,19,0.6)" stroke-width="1.2" fill="none" />
+    </svg>
+  </div>
+
+  <!-- Contact -->
+  <section id="contact" class="section">
+    <div class="container contact-center reveal">
+      <span class="stamp" style="font-size: 0.7rem;">Outside The Walls</span>
+      <h2 class="section-heading" style="align-items: center; margin: 1.5rem auto 0;">
+        <span style="font-size: 2.25rem;">Open A <span style="color: var(--color-blood);">Channel</span>.</span>
+      </h2>
+      <p style="margin: 1.5rem auto 0; max-width: 36rem; font-size: 0.875rem; line-height: 1.7; color: var(--color-muted);">
+        For freelance expeditions, AI collaborations, or anything worth fighting for. Lines open on the frequencies below.
+      </p>
+      <div class="contact-grid">
+        <a href="mailto:sparsh@example.com" class="contact-channel grain">
+          <div>
+            <div class="freq">FREQ. 01 · EMAIL</div>
+            <div class="addr">sparsh@example.com</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+        <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="contact-channel grain">
+          <div>
+            <div class="freq">FREQ. 02 · LINKEDIN</div>
+            <div class="addr">/in/sparsh-jaiswal</div>
+          </div>
+          <span class="arrow">→</span>
+        </a>
+      </div>
+      <p class="contact-closing">
+        Keep moving forward. The road is built by walking it.
+      </p>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="site-footer">
+    <div class="container">
+      <span>© 2026 Sparsh Jaiswal · Eren</span>
+      <span>Dedicate your heart.</span>
+    </div>
+  </footer>
+
+  <script>
+    // === Ash Particles ===
+    (function() {
+      const container = document.getElementById('ash-container');
+      if (!container) return;
+      const n = 28;
+      for (let i = 0; i < n; i++) {
+        const d = document.createElement('div');
+        d.className = 'ash';
+        d.style.left = Math.random() * 100 + '%';
+        d.style.animationDuration = (12 + Math.random() * 18) + 's';
+        d.style.animationDelay = (-Math.random() * 20) + 's';
+        d.style.opacity = String(0.3 + Math.random() * 0.5);
+        d.style.transform = 'scale(' + (0.5 + Math.random() * 1.6) + ')';
+        container.appendChild(d);
+      }
+    })();
+
+    // === Scroll Reveal ===
+    (function() {
+      const els = document.querySelectorAll('.reveal');
+      const io = new IntersectionObserver(
+        (entries) => entries.forEach((e) => {
+          if (e.isIntersecting) e.target.classList.add('in');
+        }),
+        { threshold: 0.15 }
+      );
+      els.forEach((el) => io.observe(el));
+    })();
+  </script>
+</body>
+</html>

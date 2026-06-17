@@ -91,7 +91,9 @@ function Index() {
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
           <div className="flex items-center gap-3">
             <div className="h-8 w-8 border-2 border-accent" style={{ clipPath: "polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%)", background: "var(--leather)" }} />
-            <span className="font-stencil text-sm tracking-[0.3em]" style={{ fontFamily: "var(--font-stencil)" }}>SJ · EREN</span>
+            <span className="font-stencil text-sm tracking-[0.3em]" style={{ fontFamily: "var(--font-stencil)" }}>SJ&nbsp;</span>
+            <span className="font-stencil text-sm tracking-[0.3em]" style={{ fontFamily: "var(--font-stencil)" }}>· EREN</span>
+            <span className="font-stencil text-sm tracking-[0.3em]" style={{ fontFamily: "var(--font-stencil)" }}>Sparsh Jaiswal&nbsp;</span>
           </div>
           <nav className="hidden gap-8 text-xs font-medium uppercase tracking-[0.25em] md:flex" style={{ fontFamily: "var(--font-stencil)" }}>
             <a href="#about" className="hover:text-accent transition-colors">Wall Maria</a>
